@@ -1,0 +1,39 @@
+MNIST Neural Network from Scratch (NumPy Only)
+This repository contains a Multi-Layer Perceptron (MLP) built entirely from scratch using only NumPy. No high-level deep learning frameworks (like TensorFlow or PyTorch) were used, focusing on the fundamental mathematics behind neural networks.
+
+🧠 Project Overview
+The goal is to classify handwritten digits (0-9) from the MNIST dataset. The project demonstrates the implementation of:
+
+Forward Propagation (Linear → ReLU → Linear → Softmax)
+
+Backpropagation (Chain rule implementation)
+
+Gradient Descent (Parameter updates)
+
+Image Pre-processing (Centering and scaling for custom inputs)
+
+🛠️ Built With
+NumPy: Used for all matrix operations and mathematical functions.
+
+Pandas: Used for initial CSV data loading.
+
+Matplotlib: Used for visualizing predictions and images.
+
+PIL (Pillow): Used for processing external user-provided images.
+
+🏗️ Model Architecture
+Input Layer: 784 neurons (representing 28x28 grayscale pixels).
+
+Hidden Layer: 10 neurons with ReLU activation.
+
+Output Layer: 10 neurons with Softmax activation (probability distribution).
+
+🚀 How to UseTraining the ModelRun the training script to perform gradient descent. The current configuration uses a learning rate ($\alpha$) of 0.25 and 500 iterations.
+"W1, b1, W2, b2 = gradient_descent(X_train, Y_train, 0.25, 500)"
+
+Predicting Custom Images
+The script includes a smart_predict_image function that takes a custom image (e.g., sayi.png), inverts it, crops it, and shifts the center of mass to match the MNIST format for high accuracy.
+smart_predict_image('your_digit.png', W1, b1, W2, b2)
+
+📈 Accuracy
+The model achieves significant accuracy on the training set within a few hundred iterations, proving that even a simple network with one hidden layer can solve the MNIST digit classification problem effectively.
